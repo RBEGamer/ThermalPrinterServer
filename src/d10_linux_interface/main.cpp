@@ -16,6 +16,10 @@
 #include <signal.h>
 #include <curl/curl.h>
 
+
+#include <ctime>
+#include <sstream>
+
 //3rd libs
 //INI PARSER LIB
 #include "ini_parser.hpp" //github.com/RBEGamer/Ini-Parser
@@ -34,7 +38,9 @@
 #define PRINTER_DEVICE_FILE "/dev/usb/lp0"
 #define HTTP_REQUEST_URL "http://127.0.0.1/get_print_lines.php"
 #define REQ_UPDATE_INTERVAL_MS 10000
-#define _DEBUG
+
+#define REQ_CONTENT_NEW_LINE_SEPERATOR '\n'
+//#define _DEBUG
 
 
 //some func defines
@@ -45,6 +51,7 @@ int fd_printer = -1;
 int printer_line_char_width = PRINTER_MAX_LINE_CHARS;
 std::string request_url_for_text = HTTP_REQUEST_URL;
 long req_update_interval_ms = REQ_UPDATE_INTERVAL_MS;
+std::string request_content_save = ""; //to compare and print only if other versions
 //SIGNAL HANDLING
 void signalHandler(int signum) {
     //close printer handle
@@ -165,26 +172,40 @@ std::cout << "_DEBUG WAS DEFINED SO ALL PRINT COMMANDS WILL ONLY SHOWN IN THE CO
     }
 
 
-
+    clock_t start = clock();
+    request_content_save = "";
 //ENTER MAIN LOOP
 volatile bool exit_main_loop = false;
+    std::string single_line = "";
+    std::cout << "starting main loop" << std::endl;
     while (!exit_main_loop){
+        clock_t end = clock();
+        //if end - start > delay time fire the print progress
+        if((end - start)/1000 > req_update_interval_ms){
+            start = clock(); //save new start clock for next turn
+            //MAKE A REQUEST
+            HTTPDownloader downloader;
+            std::string content = downloader.download(request_url_for_text);
+            if(!content.empty()) {
+                if (request_content_save != content) {
+                    request_content_save = content;
+                //TODO ADD SPLIT BY NEW LINE AND <br>
+                    std::stringstream ss(content);
+                    //split by char
+                    while(std::getline(ss,single_line,REQ_CONTENT_NEW_LINE_SEPERATOR)){
 
-        HTTPDownloader downloader;
-        std::string content = downloader.download(request_url_for_text);
-        if(!content.empty()) {
-            //TODO ADD SPLIT BY NEW LINE AND <br>
-            write_string_no_ref(fd_printer, content, printer_line_char_width);
+                        write_string_no_ref(fd_printer, single_line, printer_line_char_width);
+                    }
+
+                }
+            }
         }
-
-
-        //MAKE INTERVAL TIMER WITH MILLIS
     }
 
 
 
 
-
+//CLEANUP STUFF
 
     //close printer handle
     if(fd_printer >= 0){

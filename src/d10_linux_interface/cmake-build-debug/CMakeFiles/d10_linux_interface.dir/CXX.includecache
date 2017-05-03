@@ -57,6 +57,10 @@ signal.h
 -
 curl/curl.h
 -
+ctime
+-
+sstream
+-
 ini_parser.hpp
 /home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/ini_parser.hpp
 HTTPDownloader.hpp
