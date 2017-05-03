@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/main.cpp
+iostream
+-
+stdio.h
+-
+fcntl.h
+-
+sys/ioctl.h
+-
+unistd.h
+-
+string.h
+-
+

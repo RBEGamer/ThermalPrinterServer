@@ -1,0 +1,3 @@
+/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/cmake-build-debug/CMakeFiles/d10_linux_interface.dir
