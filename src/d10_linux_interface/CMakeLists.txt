@@ -3,5 +3,6 @@ project(d10_linux_interface)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp ini_parser.cpp)
+set(SOURCE_FILES main.cpp ini_parser.cpp Barbeque/Barbeque/barbeque.cpp)
 add_executable(d10_linux_interface ${SOURCE_FILES})
+target_link_libraries(d10_linux_interface curl)

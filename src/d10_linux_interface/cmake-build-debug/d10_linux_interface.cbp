@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/Barbeque/Barbeque/barbeque.cpp">
+			<Option target="d10_linux_interface"/>
+		</Unit>
+		<Unit filename="/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/Barbeque/Barbeque/barbeque.h">
+			<Option target="d10_linux_interface"/>
+		</Unit>
 		<Unit filename="/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/ini_parser.cpp">
 			<Option target="d10_linux_interface"/>
 		</Unit>

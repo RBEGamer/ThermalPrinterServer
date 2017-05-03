@@ -6,6 +6,28 @@
 
 #IncludeRegexTransform: 
 
+/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/Barbeque/Barbeque/barbeque.cpp
+barbeque.h
+/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/Barbeque/Barbeque/barbeque.h
+iostream
+-
+map
+-
+iterator
+-
+
+/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/Barbeque/Barbeque/barbeque.h
+iostream
+-
+string
+-
+curl/curl.h
+-
+map
+-
+string.h
+-
+
 /home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/ini_parser.cpp
 ini_parser.hpp
 /home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/ini_parser.hpp
@@ -33,10 +55,14 @@ sys/ioctl.h
 -
 unistd.h
 -
+string
+-
 string.h
 -
 signal.h
 -
 ini_parser.hpp
 /home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/ini_parser.hpp
+Barbeque/Barbeque/barbeque.h
+/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/Barbeque/Barbeque/barbeque.h
 

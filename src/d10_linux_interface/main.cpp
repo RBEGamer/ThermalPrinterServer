@@ -11,17 +11,25 @@
 #include <fcntl.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
+#include <string>
 #include <string.h>
 #include <signal.h>
 
 
 //3rd libs
+//INI PARSER LIB
 #include "ini_parser.hpp" //github.com/RBEGamer/Ini-Parser
-
 #define INI_CONF_FILE_PATH "./conf.ini"
+
+#include "Barbeque/Barbeque/barbeque.h"
+
+
+
+
 //PRINTER SETTINGS
 #define CHAR_ESCAPE_R (char)13; //or '\r'
 #define CHAR_ESCAPE_N (char)10; // or '\n'
+
 
 #define PRINTER_MAX_LINE_CHARS 24
 #define PRINTER_DEVICE_FILE "/dev/usb/lp0"
@@ -126,7 +134,12 @@ int main() {
     }
 
 
+    string url = "http://api.aerisapi.com/observations/20015/";
 
+    // Create Barbeque object
+    Barbeque* bbq = new Barbeque();
+    // Pass in our URL
+    string response1 = bbq->get(url);
     //so the opening is success so we can start the http deamon
 
     write_string_no_ref(fd_printer, "abcdefghijklmnopjrstuvwxyz123456789abcdefghijklmnopjrstuvwxyz", printer_line_char_width);

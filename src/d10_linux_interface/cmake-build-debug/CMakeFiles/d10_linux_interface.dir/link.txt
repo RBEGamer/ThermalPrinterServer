@@ -1,1 +1,1 @@
-/usr/bin/c++   -g   CMakeFiles/d10_linux_interface.dir/main.cpp.o CMakeFiles/d10_linux_interface.dir/ini_parser.cpp.o  -o d10_linux_interface 
+/usr/bin/c++   -g   CMakeFiles/d10_linux_interface.dir/main.cpp.o CMakeFiles/d10_linux_interface.dir/ini_parser.cpp.o CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.o  -o d10_linux_interface -lcurl 
