@@ -1,3 +1,11 @@
+#define AUTHOR "Marcel Ochsendorf"
+#define MAIL "marcel.ochsendorf@gmail.com"
+#define GITHUB "github.com/RBEGamer"
+
+#define VERSION "0.9"
+#define PROGRAM_NAME "SIMPLE D10 THERMAL PRINTER SERVER"
+
+
 #include <iostream>
 #include <stdio.h>
 #include <fcntl.h>
