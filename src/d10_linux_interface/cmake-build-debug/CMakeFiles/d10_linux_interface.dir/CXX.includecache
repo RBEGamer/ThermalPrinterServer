@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/ini_parser.cpp
+ini_parser.hpp
+/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/ini_parser.hpp
+
+/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/ini_parser.hpp
+stdio.h
+-
+cstring
+-
+iostream
+-
+stdlib.h
+-
+unordered_map
+-
+
 /home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/main.cpp
 iostream
 -
@@ -19,4 +35,8 @@ unistd.h
 -
 string.h
 -
+signal.h
+-
+ini_parser.hpp
+/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/ini_parser.hpp
 

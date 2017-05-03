@@ -123,6 +123,33 @@ d10_linux_interface/fast:
 	$(MAKE) -f CMakeFiles/d10_linux_interface.dir/build.make CMakeFiles/d10_linux_interface.dir/build
 .PHONY : d10_linux_interface/fast
 
+ini_parser.o: ini_parser.cpp.o
+
+.PHONY : ini_parser.o
+
+# target to build an object file
+ini_parser.cpp.o:
+	$(MAKE) -f CMakeFiles/d10_linux_interface.dir/build.make CMakeFiles/d10_linux_interface.dir/ini_parser.cpp.o
+.PHONY : ini_parser.cpp.o
+
+ini_parser.i: ini_parser.cpp.i
+
+.PHONY : ini_parser.i
+
+# target to preprocess a source file
+ini_parser.cpp.i:
+	$(MAKE) -f CMakeFiles/d10_linux_interface.dir/build.make CMakeFiles/d10_linux_interface.dir/ini_parser.cpp.i
+.PHONY : ini_parser.cpp.i
+
+ini_parser.s: ini_parser.cpp.s
+
+.PHONY : ini_parser.s
+
+# target to generate assembly for a file
+ini_parser.cpp.s:
+	$(MAKE) -f CMakeFiles/d10_linux_interface.dir/build.make CMakeFiles/d10_linux_interface.dir/ini_parser.cpp.s
+.PHONY : ini_parser.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... d10_linux_interface"
+	@echo "... ini_parser.o"
+	@echo "... ini_parser.i"
+	@echo "... ini_parser.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

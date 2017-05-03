@@ -3,5 +3,5 @@ project(d10_linux_interface)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp)
+set(SOURCE_FILES main.cpp ini_parser.cpp)
 add_executable(d10_linux_interface ${SOURCE_FILES})
