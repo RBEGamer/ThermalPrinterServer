@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/d10_linux_interface.dir/main.cpp.o"
   "CMakeFiles/d10_linux_interface.dir/ini_parser.cpp.o"
-  "CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.o"
+  "CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.o"
   "d10_linux_interface.pdb"
   "d10_linux_interface"
 )

@@ -105,42 +105,42 @@ CMakeFiles/d10_linux_interface.dir/ini_parser.cpp.o.provides: CMakeFiles/d10_lin
 CMakeFiles/d10_linux_interface.dir/ini_parser.cpp.o.provides.build: CMakeFiles/d10_linux_interface.dir/ini_parser.cpp.o
 
 
-CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.o: CMakeFiles/d10_linux_interface.dir/flags.make
-CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.o: ../Barbeque/Barbeque/barbeque.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.o -c /home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/Barbeque/Barbeque/barbeque.cpp
+CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.o: CMakeFiles/d10_linux_interface.dir/flags.make
+CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.o: ../HTTPDownloader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.o -c /home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/HTTPDownloader.cpp
 
-CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/Barbeque/Barbeque/barbeque.cpp > CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.i
+CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/HTTPDownloader.cpp > CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.i
 
-CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/Barbeque/Barbeque/barbeque.cpp -o CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.s
+CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/HTTPDownloader.cpp -o CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.s
 
-CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.o.requires:
+CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.o.requires:
 
-.PHONY : CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.o.requires
+.PHONY : CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.o.requires
 
-CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.o.provides: CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.o.requires
-	$(MAKE) -f CMakeFiles/d10_linux_interface.dir/build.make CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.o.provides.build
-.PHONY : CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.o.provides
+CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.o.provides: CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.o.requires
+	$(MAKE) -f CMakeFiles/d10_linux_interface.dir/build.make CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.o.provides.build
+.PHONY : CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.o.provides
 
-CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.o.provides.build: CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.o
+CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.o.provides.build: CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.o
 
 
 # Object files for target d10_linux_interface
 d10_linux_interface_OBJECTS = \
 "CMakeFiles/d10_linux_interface.dir/main.cpp.o" \
 "CMakeFiles/d10_linux_interface.dir/ini_parser.cpp.o" \
-"CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.o"
+"CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.o"
 
 # External object files for target d10_linux_interface
 d10_linux_interface_EXTERNAL_OBJECTS =
 
 d10_linux_interface: CMakeFiles/d10_linux_interface.dir/main.cpp.o
 d10_linux_interface: CMakeFiles/d10_linux_interface.dir/ini_parser.cpp.o
-d10_linux_interface: CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.o
+d10_linux_interface: CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.o
 d10_linux_interface: CMakeFiles/d10_linux_interface.dir/build.make
 d10_linux_interface: CMakeFiles/d10_linux_interface.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable d10_linux_interface"
@@ -153,7 +153,7 @@ CMakeFiles/d10_linux_interface.dir/build: d10_linux_interface
 
 CMakeFiles/d10_linux_interface.dir/requires: CMakeFiles/d10_linux_interface.dir/main.cpp.o.requires
 CMakeFiles/d10_linux_interface.dir/requires: CMakeFiles/d10_linux_interface.dir/ini_parser.cpp.o.requires
-CMakeFiles/d10_linux_interface.dir/requires: CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.o.requires
+CMakeFiles/d10_linux_interface.dir/requires: CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.o.requires
 
 .PHONY : CMakeFiles/d10_linux_interface.dir/requires
 

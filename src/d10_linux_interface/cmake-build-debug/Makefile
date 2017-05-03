@@ -123,32 +123,32 @@ d10_linux_interface/fast:
 	$(MAKE) -f CMakeFiles/d10_linux_interface.dir/build.make CMakeFiles/d10_linux_interface.dir/build
 .PHONY : d10_linux_interface/fast
 
-Barbeque/Barbeque/barbeque.o: Barbeque/Barbeque/barbeque.cpp.o
+HTTPDownloader.o: HTTPDownloader.cpp.o
 
-.PHONY : Barbeque/Barbeque/barbeque.o
+.PHONY : HTTPDownloader.o
 
 # target to build an object file
-Barbeque/Barbeque/barbeque.cpp.o:
-	$(MAKE) -f CMakeFiles/d10_linux_interface.dir/build.make CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.o
-.PHONY : Barbeque/Barbeque/barbeque.cpp.o
+HTTPDownloader.cpp.o:
+	$(MAKE) -f CMakeFiles/d10_linux_interface.dir/build.make CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.o
+.PHONY : HTTPDownloader.cpp.o
 
-Barbeque/Barbeque/barbeque.i: Barbeque/Barbeque/barbeque.cpp.i
+HTTPDownloader.i: HTTPDownloader.cpp.i
 
-.PHONY : Barbeque/Barbeque/barbeque.i
+.PHONY : HTTPDownloader.i
 
 # target to preprocess a source file
-Barbeque/Barbeque/barbeque.cpp.i:
-	$(MAKE) -f CMakeFiles/d10_linux_interface.dir/build.make CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.i
-.PHONY : Barbeque/Barbeque/barbeque.cpp.i
+HTTPDownloader.cpp.i:
+	$(MAKE) -f CMakeFiles/d10_linux_interface.dir/build.make CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.i
+.PHONY : HTTPDownloader.cpp.i
 
-Barbeque/Barbeque/barbeque.s: Barbeque/Barbeque/barbeque.cpp.s
+HTTPDownloader.s: HTTPDownloader.cpp.s
 
-.PHONY : Barbeque/Barbeque/barbeque.s
+.PHONY : HTTPDownloader.s
 
 # target to generate assembly for a file
-Barbeque/Barbeque/barbeque.cpp.s:
-	$(MAKE) -f CMakeFiles/d10_linux_interface.dir/build.make CMakeFiles/d10_linux_interface.dir/Barbeque/Barbeque/barbeque.cpp.s
-.PHONY : Barbeque/Barbeque/barbeque.cpp.s
+HTTPDownloader.cpp.s:
+	$(MAKE) -f CMakeFiles/d10_linux_interface.dir/build.make CMakeFiles/d10_linux_interface.dir/HTTPDownloader.cpp.s
+.PHONY : HTTPDownloader.cpp.s
 
 ini_parser.o: ini_parser.cpp.o
 
@@ -213,9 +213,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... d10_linux_interface"
-	@echo "... Barbeque/Barbeque/barbeque.o"
-	@echo "... Barbeque/Barbeque/barbeque.i"
-	@echo "... Barbeque/Barbeque/barbeque.s"
+	@echo "... HTTPDownloader.o"
+	@echo "... HTTPDownloader.i"
+	@echo "... HTTPDownloader.s"
 	@echo "... ini_parser.o"
 	@echo "... ini_parser.i"
 	@echo "... ini_parser.s"

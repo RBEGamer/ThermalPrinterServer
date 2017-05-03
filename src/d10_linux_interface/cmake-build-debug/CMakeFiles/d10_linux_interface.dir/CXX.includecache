@@ -6,26 +6,22 @@
 
 #IncludeRegexTransform: 
 
-/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/Barbeque/Barbeque/barbeque.cpp
-barbeque.h
-/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/Barbeque/Barbeque/barbeque.h
-iostream
--
-map
--
-iterator
--
-
-/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/Barbeque/Barbeque/barbeque.h
-iostream
--
-string
--
+/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/HTTPDownloader.cpp
+HTTPDownloader.hpp
+/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/HTTPDownloader.hpp
 curl/curl.h
 -
-map
+curl/easy.h
 -
-string.h
+curl/curlbuild.h
+-
+sstream
+-
+iostream
+-
+
+/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/HTTPDownloader.hpp
+string
 -
 
 /home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/ini_parser.cpp
@@ -57,12 +53,12 @@ unistd.h
 -
 string
 -
-string.h
--
 signal.h
+-
+curl/curl.h
 -
 ini_parser.hpp
 /home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/ini_parser.hpp
-Barbeque/Barbeque/barbeque.h
-/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/Barbeque/Barbeque/barbeque.h
+HTTPDownloader.hpp
+/home/marcel/Desktop/Buy_List_Printer/src/d10_linux_interface/HTTPDownloader.hpp
 
