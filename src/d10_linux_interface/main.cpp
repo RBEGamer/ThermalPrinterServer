@@ -120,6 +120,8 @@ int main() {
 #ifdef _DEBUG
 std::cout << "_DEBUG WAS DEFINED SO ALL PRINT COMMANDS WILL ONLY SHOWN IN THE CONSOLE" << std::endl;
     #endif
+    
+    std::cout << "PLEASE MAKE SURE THEconf.ini file is in the same directory as this executable" << std::endl;
     //register signal handler
     signal(SIGINT, signalHandler);
 
