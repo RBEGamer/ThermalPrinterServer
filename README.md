@@ -49,6 +49,7 @@
 * cp /home/pi/ThermalPrinterServer-master/src/conf.ini /home/pi/print_server/
 
 ## COPY php files to WWW
+* cp -R /home/pi/ThermalPrinterServer-master/sry/webapp /var/www/html
 
 ## EDIT rc.local for autostart
 * nano /etc/rc.local
