@@ -36,7 +36,7 @@
 //HERE YOU CAN SET THE DEFAULT PARAMETER IF THE CONFIG FILE NOT EXISTS
 #define PRINTER_MAX_LINE_CHARS 24
 #define PRINTER_DEVICE_FILE "/dev/usb/lp0"
-#define HTTP_REQUEST_URL "http://127.0.0.1/get_print_lines.php"
+#define HTTP_REQUEST_URL "http://127.0.0.1/get_print_lines.php?is_printer=1"
 #define REQ_UPDATE_INTERVAL_MS 10000
 
 #define REQ_CONTENT_NEW_LINE_SEPERATOR '\n'
@@ -148,7 +148,7 @@ std::cout << "_DEBUG WAS DEFINED SO ALL PRINT COMMANDS WILL ONLY SHOWN IN THE CO
     if (conf_csv == "") {
         //set default value
         printer_line_char_width = PRINTER_MAX_LINE_CHARS;
-        std::cout << "INI key=printer_line_width_chars not found use default" <<std::endl;
+        std::cout << "INI key=printer_line_width_chars not found use default:"<< PRINTER_MAX_LINE_CHARS <<std::endl;
     }else{
         printer_line_char_width = atoi(conf_csv.c_str());
     }
@@ -157,7 +157,7 @@ std::cout << "_DEBUG WAS DEFINED SO ALL PRINT COMMANDS WILL ONLY SHOWN IN THE CO
     if (conf_csv == "") {
         //set default value
         request_url_for_text = HTTP_REQUEST_URL;
-        std::cout << "INI key=get_text_request_url not found use default" <<std::endl;
+        std::cout << "INI key=get_text_request_url not found use default:" << HTTP_REQUEST_URL  <<std::endl;
     }else{
         request_url_for_text = conf_csv;
     }
@@ -168,7 +168,7 @@ std::cout << "_DEBUG WAS DEFINED SO ALL PRINT COMMANDS WILL ONLY SHOWN IN THE CO
     if (conf_csv == "") {
         //set default value
         req_update_interval_ms = REQ_UPDATE_INTERVAL_MS;
-        std::cout << "INI key=printer_line_width_chars not found use default" <<std::endl;
+        std::cout << "INI key=printer_line_width_chars not found use default:"<<REQ_UPDATE_INTERVAL_MS <<std::endl;
     }else{
         req_update_interval_ms = atol(conf_csv.c_str());
     }
