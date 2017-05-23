@@ -29,14 +29,21 @@
 * reboot
 ## INSTALL BUILD ENVIRONMENT
 * apt-get install git-all -y
+* apt-get install curl libcurl4-openssl-dev
 * apt-get -y install build-essential
 ## REBOOT
 * reboot
 ## CLONE SOURCES
 * cd /home/pi/
 * git clone https://github.com/RBEGamer/ThermalPrinterServer.git
-sudo apt
+* cd ./ThermalPrinterServer/src/d10_linux_interface/
+* g++ main.cpp ini_parser.cpp ini_parser.hpp HTTPDownloader.cpp HTTPDownloader.hpp -std=c++11 -L/usr/lib/arm-linux-gnueabihf -lcurl -o d10_printer_server.o
+
 ## COPY SOURCE FILES TO WW
+* chmod +x d10_printer_server.o
+* mkdir /home/pi/print_server/
+* cp ./d10_printer_server.o /home/pi/print_server
+* cd /home/pi
 
 ## COMPILE SOURCES
 
