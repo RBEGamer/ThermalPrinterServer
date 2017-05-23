@@ -36,16 +36,25 @@
 ## CLONE SOURCES
 * cd /home/pi/
 * git clone https://github.com/RBEGamer/ThermalPrinterServer.git
+
+## COMPILE SOURCES
 * cd ./ThermalPrinterServer/src/d10_linux_interface/
 * g++ main.cpp ini_parser.cpp ini_parser.hpp HTTPDownloader.cpp HTTPDownloader.hpp -std=c++11 -L/usr/lib/arm-linux-gnueabihf -lcurl -o d10_printer_server.o
 
-## COPY SOURCE FILES TO WW
+## COPY EXEFILES
 * chmod +x d10_printer_server.o
 * mkdir /home/pi/print_server/
 * cp ./d10_printer_server.o /home/pi/print_server
-* cd /home/pi
+## COPY CONFIG FILES TO EXE DIR
+* cp /home/pi/ThermalPrinterServer-master/src/conf.ini /home/pi/print_server/
 
-## COMPILE SOURCES
+## COPY php files to WWW
 
-## SET AUTORUN
+## EDIT rc.local for autostart
+* nano /etc/rc.local
+* and write before exit0_ `/home/pi/printer_server/d10_printer_server.o &`
 
+# PRINTER CONNECTION
+* connect the printer to a usb port of the pi
+* check the lp port by run `ls /dev/usb/`
+* edit the entry `printer_device_file` int the `/home/pi/printer_server/config.ini`
