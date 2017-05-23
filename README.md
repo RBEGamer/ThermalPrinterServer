@@ -53,9 +53,14 @@
 
 ## EDIT rc.local for autostart
 * nano /etc/rc.local
-* and write before exit0_ `/home/pi/printer_server/d10_printer_server.o &`
+* and write before exit0_ `/home/pi/print_server/d10_printer_server.o &`
 
 # PRINTER CONNECTION
 * connect the printer to a usb port of the pi
 * check the lp port by run `ls /dev/usb/`
 * edit the entry `printer_device_file` int the `/home/pi/printer_server/config.ini`
+
+#  LOAD SQL TABLE
+* open phpmyadmin and import the `/src/buyprinter.sql` to create all needed databases
+# EDIT PHP FILES
+* open the `db_conf.php` and change set variables to your mysql server settings
