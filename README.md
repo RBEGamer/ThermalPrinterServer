@@ -64,3 +64,16 @@
 * open phpmyadmin and import the `/src/buyprinter.sql` to create all needed databases
 # EDIT PHP FILES
 * open the `db_conf.php` and change set variables to your mysql server settings
+
+
+
+
+
+
+# IMAGES
+
+## SIMPLE WEBINTERFACE
+![Gopher image](/documentation/IMAGES/webapp.PNG)
+
+## PRINTED BUYLIST
+![Gopher image](/documentation/IMAGES/output_print.jpg)
