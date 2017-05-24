@@ -73,7 +73,7 @@
 # IMAGES
 
 ## SIMPLE WEBINTERFACE
-![Gopher image](/documentation/IMAGES/webapp.PNG)
+![Gopher image](/documentation/webapp.PNG)
 
 ## PRINTED BUYLIST
-![Gopher image](/documentation/IMAGES/output_print.jpg)
+![Gopher image](/documentation/output_print.jpg)
