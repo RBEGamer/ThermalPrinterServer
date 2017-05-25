@@ -1,6 +1,9 @@
 # Thermal Print Server
 
 # FEATURES
+* collect your items on the website
+* print them out
+* multible printers are supported
 
 # PARTS
 
@@ -29,12 +32,12 @@
 * reboot
 ## INSTALL BUILD ENVIRONMENT
 * apt-get install git-all -y
-* apt-get install curl libcurl4-openssl-dev
+* apt-get install curl libcurl4-openssl-dev -y
 * apt-get -y install build-essential
 ## REBOOT
 * reboot
 ## CLONE SOURCES
-* cd /home/pi/
+* cd /home/USER_HERE/
 * git clone https://github.com/RBEGamer/ThermalPrinterServer.git
 
 ## COMPILE SOURCES
@@ -43,28 +46,30 @@
 
 ## COPY EXEFILES
 * chmod +x d10_printer_server.o
-* mkdir /home/pi/print_server/
-* cp ./d10_printer_server.o /home/pi/print_server
+* mkdir /home/USER_HERE/print_server/
+* cp ./d10_printer_server.o /home/USER_HERE/print_server
 ## COPY CONFIG FILES TO EXE DIR
-* cp /home/pi/ThermalPrinterServer-master/src/conf.ini /home/pi/print_server/
+* cp /home/USER_HERE/ThermalPrinterServer-master/src/conf.ini /home/pi/print_server/
 
 ## COPY php files to WWW
-* cp -R /home/pi/ThermalPrinterServer-master/sry/webapp /var/www/html
+* cp -R /home/USER_HERE/ThermalPrinterServer-master/src/webapp /var/www/html
 
 ## EDIT rc.local for autostart
 * nano /etc/rc.local
-* and write before exit0_ `/home/pi/print_server/d10_printer_server.o &`
+* and write before exit0_ `/home/USER_HERE/print_server/d10_printer_server.o &`
 
 # PRINTER CONNECTION
 * connect the printer to a usb port of the pi
 * check the lp port by run `ls /dev/usb/`
-* edit the entry `printer_device_file` int the `/home/pi/printer_server/config.ini`
+* edit the entry `printer_device_file` int the `/home/USER_HERE/printer_server/config.ini`
 
 #  LOAD SQL TABLE
 * open phpmyadmin and import the `/src/buyprinter.sql` to create all needed databases
 # EDIT PHP FILES
 * open the `db_conf.php` and change set variables to your mysql server settings
 
+# FINISH
+* open your browser to `http://IP_HERE/webapp/index.php`
 
 
 
