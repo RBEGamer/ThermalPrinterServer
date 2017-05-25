@@ -17,7 +17,7 @@
 </form>
 
 
-<h2>  ITEMS TO PRINTasd</h2>
+<h2>  ITEMS TO PRINT</h2>
 
 <form method='POST' action='print.php'>
 <input type='submit' value='PRINT ITEMS' />
