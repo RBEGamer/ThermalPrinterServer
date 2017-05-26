@@ -11,6 +11,7 @@ $dont_delete = 1;
 
 $printer_id = -1;
 if(isset($_GET['printer_id'])){
+	//TODO PRINTER EINTRAGEN
 $printer_id = $_GET['printer_id'];
 }
 
