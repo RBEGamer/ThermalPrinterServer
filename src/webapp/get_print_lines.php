@@ -11,7 +11,7 @@ $dont_delete = 1;
 
 $printer_id = -1;
 if(isset($_GET['printer_id'])){
-$printer_id = 1;
+$printer_id = $_GET['printer_id'];
 }
 
 $fetchinfo_dev = mysql_query("SELECT * FROM `items` WHERE `print`='1' AND `printed`='0'");
