@@ -11,9 +11,24 @@ $dont_delete = 1;
 
 $printer_id = -1;
 if(isset($_GET['printer_id'])){
-	//TODO PRINTER EINTRAGEN
 $printer_id = $_GET['printer_id'];
 }
+
+$printer_name = "";
+if(isset($_GET['printer_name'])){
+	
+$printer_name = $_GET['printer_name'];
+}
+
+//REGISTER PRINTER
+if($printer_name != "" && $printer_id > 0){
+	$fetchinfo_reg_printer = mysql_query("SELECT * FROM `printers` WHERE `printerid`='".$printer_id."' AND `printername`='".$printer_name."'");
+	if(mysql_num_rows($fetchinfo_reg_printer) <= 0){
+		$fetchinfo_reg_printer_reg = mysql_query("INSERT INTO `buyprinter`.`printers` (`id`, `printerid`, `printername`, `added`) VALUES (NULL, '".$printer_id."', '".$printer_name."', CURRENT_TIMESTAMP);");
+	}
+	//TODO PRINTER EINTRAGEN
+}
+
 
 $fetchinfo_dev = mysql_query("SELECT * FROM `items` WHERE `print`='1' AND `printed`='0'");
 
