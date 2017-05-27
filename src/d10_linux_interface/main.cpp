@@ -2,7 +2,7 @@
 #define MAIL "marcel.ochsendorf@gmail.com"
 #define GITHUB "github.com/RBEGamer"
 
-#define VERSION "0.9"
+#define VERSION "1.0"
 #define PROGRAM_NAME "SIMPLE D10 THERMAL PRINTER SERVER"
 
 #define _DEBUG
@@ -36,8 +36,8 @@
 //HERE YOU CAN SET THE DEFAULT PARAMETER IF THE CONFIG FILE NOT EXISTS
 #define PRINTER_MAX_LINE_CHARS 24
 #define PRINTER_DEVICE_FILE "/dev/usb/lp0"
-#define HTTP_REQUEST_URL "http://127.0.0.1/get_print_lines.php?is_printer=1"
-#define REQ_UPDATE_INTERVAL_MS 10000
+#define HTTP_REQUEST_URL "http://127.0.0.1/get_print_lines.php?printer_id=1"
+#define REQ_UPDATE_INTERVAL_MS 5000
 
 #define REQ_CONTENT_NEW_LINE_SEPERATOR '\n'
 //#define _DEBUG
