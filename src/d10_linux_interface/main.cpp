@@ -162,7 +162,10 @@ std::cout << "_DEBUG WAS DEFINED SO ALL PRINT COMMANDS WILL ONLY SHOWN IN THE CO
         request_url_for_text = conf_csv;
     }
 
-
+write_string_no_ref(fd_printer, request_url_for_text, printer_line_char_width);
+    
+    
+    
     //LOAD CONFIG UPDATE INTERVAL
     conf_csv = *conf_parser->get_value("url", "refresh_interval_ms");
     if (conf_csv == "") {
