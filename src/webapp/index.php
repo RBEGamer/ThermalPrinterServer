@@ -11,7 +11,23 @@
 <tr>
  <td><input type='number' name="item_count" id='item_count' min='1' max='99' value='1'></td>
 <td><input type='text' placeholder='ITEM_NAME' name='item_name' id='item_name'/></td>
-</tr>
+
+</tr><tr><td> SELECT PRINTER </td><td>
+<?php
+include('db_conf.php');
+$verbindung = mysql_connect ($db_host,
+$db_username, $db_password)or die ("keine Verbindung möglich. Benutzername oder Passwort sind falsch");
+mysql_select_db($db_name)or die ("Die Datenbank existiert nicht.");
+$counter=0;
+$fetchinfo_dev = mysql_query("SELECT * FROM `printers` WHERE 1");
+$result = "<select><option value='-1'>ALL</option>";
+while($row_dev = mysql_fetch_array($fetchinfo_dev)) {
+	 $result = $result ."<option value='".$row_dev['printerid']. "'>".$row_dev['printername']. "</option>";
+}
+ $result = $result ."</select>";
+ echo $result;
+?>
+</td></tr>
 <tr><td><input type='submit' value='ADD ITEM' /></td></tr>
 </table>
 </form>
