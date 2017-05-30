@@ -12,8 +12,9 @@
 * RPI
 * SD CARD
 * 9V/1A Power supply for the printer
-* 5V Regulator
+* 5V Regulator for the pi
 * Thermal paper 57mm width
+
 # HARDWARE SETUP
 * connect printer and pi with the usb->parallel adapter
 * connect the 5v with the 9v supply and 5v and gnd of the pi
@@ -42,41 +43,30 @@
 ## CLONE SOURCES
 * cd /home/USER_HERE/
 * git clone https://github.com/RBEGamer/ThermalPrinterServer.git
-
 ## COMPILE SOURCES
 * cd ./ThermalPrinterServer/src/d10_linux_interface/
 * g++ main.cpp ini_parser.cpp ini_parser.hpp HTTPDownloader.cpp HTTPDownloader.hpp -std=c++11 -L/usr/lib/arm-linux-gnueabihf -lcurl -o d10_printer_server.o
-
 ## COPY EXEFILES
 * chmod +x d10_printer_server.o
 * mkdir /home/USER_HERE/print_server/
 * cp ./d10_printer_server.o /home/USER_HERE/print_server
 ## COPY CONFIG FILES TO EXE DIR
 * cp /home/USER_HERE/ThermalPrinterServer-master/src/conf.ini /home/pi/print_server/
-
 ## COPY php files to WWW
 * cp -R /home/USER_HERE/ThermalPrinterServer-master/src/webapp /var/www/html
-
 ## EDIT rc.local for autostart
 * nano /etc/rc.local
 * and write before `exit0;` `/home/USER_HERE/print_server/d10_printer_server.o &`
-
 # PRINTER CONNECTION
 * connect the printer to a usb port of the pi
 * check the lp port by run `ls /dev/usb/`
 * edit the entry `printer_device_file` in the `/home/USER_HERE/printer_server/config.ini`
-
 #  LOAD SQL TABLE
 * open phpmyadmin and import the `/src/buyprinter.sql` to create all needed databases
 # EDIT PHP FILES
 * open the `db_conf.php` and change set variables to your mysql server settings
-
 # FINISH
 * open your browser to `http://IP_HERE/webapp/index.php`
-
-
-
-
 
 # IMAGES
 
