@@ -39,6 +39,9 @@ while($row_dev = mysql_fetch_array($fetchinfo_dev)) {
 <input type='submit' value='PRINT ITEMS' />
 </form>
 
+<form method='POST' action='add_empty.php'>
+<input type='submit' value='PRINT EMTPY LINE' />
+</form>
 
 
 
