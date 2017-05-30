@@ -35,9 +35,10 @@ $fetchinfo_dev = mysql_query("SELECT * FROM `items` WHERE `print`='1' AND `print
 if($printer_id > -1){
 $fetchinfo_dev = mysql_query("SELECT * FROM `items` WHERE `print`='1' AND `printed`='0' AND `printerid`='".$printer_id."'");
 }
+$result = "";
 //print only a headline if items are there
 if(mysql_num_rows($fetchinfo_dev) >0){
-$result = "--- ITEM LIST ---" ."\r\n";
+//$result = "--- ITEM LIST ---" ."\r\n";
 }
 while($row_dev = mysql_fetch_array($fetchinfo_dev)) {
 	 $result = $result .$row_dev['item_count'] ." x ".$row_dev['item_name']. "\r\n";
@@ -47,7 +48,7 @@ while($row_dev = mysql_fetch_array($fetchinfo_dev)) {
   }
 }
 if(mysql_num_rows($fetchinfo_dev) >0){
-$result = $result ."---------------" ."\r\n";
+//$result = $result ."---------------" ."\r\n";
 }
 echo $result;
 ?>
