@@ -5,7 +5,7 @@
 #define VERSION "1.0"
 #define PROGRAM_NAME "SIMPLE D10 THERMAL PRINTER SERVER"
 
-#define _DEBUG
+//#define _DEBUG
 #include <iostream>
 #include <stdio.h>
 #include <fcntl.h>
