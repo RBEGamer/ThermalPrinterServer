@@ -163,7 +163,8 @@ std::cout << "_DEBUG WAS DEFINED SO ALL PRINT COMMANDS WILL ONLY SHOWN IN THE CO
     }
 
 write_string_no_ref(fd_printer, request_url_for_text, printer_line_char_width);
-    
+
+write_string_no_ref(fd_printer, "--- ITEM LIST ---", printer_line_char_width);
     
     
     //LOAD CONFIG UPDATE INTERVAL
