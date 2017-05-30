@@ -24,7 +24,7 @@
 ## INSTALL APACHE2
 * apt-get update
 * apt-get upgrade 
-* apt-get install mysql-server -y
+* apt-get install mysql-server -y (PLEASE DONT USE ROOT OR SO...)
 * apt-get install apache2 -y
 * apt-get install php5 libapache2-mod-php5 php5-mysql php5-mcrypt -y
 ## INSTALL PHPMYADMIN
@@ -59,12 +59,12 @@
 
 ## EDIT rc.local for autostart
 * nano /etc/rc.local
-* and write before exit0_ `/home/USER_HERE/print_server/d10_printer_server.o &`
+* and write before `exit0;` `/home/USER_HERE/print_server/d10_printer_server.o &`
 
 # PRINTER CONNECTION
 * connect the printer to a usb port of the pi
 * check the lp port by run `ls /dev/usb/`
-* edit the entry `printer_device_file` int the `/home/USER_HERE/printer_server/config.ini`
+* edit the entry `printer_device_file` in the `/home/USER_HERE/printer_server/config.ini`
 
 #  LOAD SQL TABLE
 * open phpmyadmin and import the `/src/buyprinter.sql` to create all needed databases
