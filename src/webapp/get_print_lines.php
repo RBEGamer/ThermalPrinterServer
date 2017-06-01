@@ -37,8 +37,8 @@ $fetchinfo_dev = mysql_query("SELECT * FROM `items` WHERE `print`='1' AND `print
 }
 $result = "";
 //print only a headline if items are there
-if(mysql_num_rows($fetchinfo_dev) >0){
-//$result = "--- ITEM LIST ---" ."\r\n";
+if(mysql_num_rows($fetchinfo_dev) >0 && $row_dev['item_count'] > 0 && $row_dev['item_name'] != ""){
+$result = "--- ITEM LIST ---" ."\r\n";
 }
 while($row_dev = mysql_fetch_array($fetchinfo_dev)) {
 	 $result = $result .$row_dev['item_count'] ." x ".$row_dev['item_name']. "\r\n";
@@ -47,8 +47,8 @@ while($row_dev = mysql_fetch_array($fetchinfo_dev)) {
   $fetchinfo_push = mysql_query("UPDATE `items` SET `printed`='1' WHERE `id`='".$row_dev['id']."' AND");
   }
 }
-if(mysql_num_rows($fetchinfo_dev) >0){
-//$result = $result ."---------------" ."\r\n";
+if(mysql_num_rows($fetchinfo_dev) >0 && $row_dev['item_count'] > 0 && $row_dev['item_name'] != ""){
+$result = $result ."---------------" ."\r\n";
 }
 echo $result;
 ?>
