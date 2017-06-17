@@ -28,7 +28,6 @@ if($printer_name != "" && $printer_id != -1){
 	if(mysql_num_rows($fetchinfo_reg_printer) <= 0){
 		$fetchinfo_reg_printer_reg = mysql_query("INSERT INTO `buyprinter`.`printers` (`id`, `printerid`, `printername`, `added`) VALUES (NULL, '".$printer_id."', '".$printer_name."', CURRENT_TIMESTAMP);");
 	}
-	//TODO PRINTER EINTRAGEN
 }
 
 
