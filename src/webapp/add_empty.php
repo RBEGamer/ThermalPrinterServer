@@ -7,7 +7,7 @@ $printer_id = -1;
 if(isset($_POST['printer_id'])){
   $printer_id = $_POST['printer_id'];
 }
-$fetchinfo_dev = mysql_query("INSERT INTO `buyprinter`.`items` (`id`, `item_name`, `print`, `printed`, `added_date`, `item_count`, `printerid`) VALUES (NULL, '', '0', '0', CURRENT_TIMESTAMP, '', '".$printer_id."');");
+$fetchinfo_dev = mysql_query("INSERT INTO `buyprinter`.`items` (`id`, `item_name`, `print`, `printed`, `added_date`, `item_count`, `printerid`) VALUES (NULL, '', '0', '0', CURRENT_TIMESTAMP, '-1', '".$printer_id."');");
 header('Location: index.php');
 exit();  
 
