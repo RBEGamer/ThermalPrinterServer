@@ -1,8 +1,9 @@
 # Thermal Print Server
 
 # FEATURES
-* collect your items on the website / app
-* print them out
+* 1. collect your items on the website
+* 2.print them out
+* 3. forget nothing
 * multible printers are supported
 * simple configuration
 
@@ -59,10 +60,11 @@
 * and write before `exit0;` `/home/USER_HERE/print_server/d10_printer_server.o &`
 # PRINTER CONNECTION
 * connect the printer to a usb port of the pi
-* check the lp port by run `ls /dev/usb/`
+* check the lp port number by run `ls /dev/usb/`
 * edit the entry `printer_device_file` in the `/home/USER_HERE/printer_server/config.ini`
 #  LOAD SQL TABLE
 * open phpmyadmin and import the `/src/buyprinter.sql` to create all needed databases
+* to add a printer, add the `printers` table
 # EDIT PHP FILES
 * open the `db_conf.php` and change set variables to your mysql server settings
 # FINISH
