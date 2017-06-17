@@ -22,8 +22,9 @@ $printer_name = $_GET['printer_name'];
 }
 
 //REGISTER PRINTER
-if($printer_name != "" && $printer_id > 0){
-	$fetchinfo_reg_printer = mysql_query("SELECT * FROM `printers` WHERE `printerid`='".$printer_id."' AND `printername`='".$printer_name."'");
+//ID -1 is reserved for all printers
+if($printer_name != "" && $printer_id != -1){
+	$fetchinfo_reg_printer = mysql_query("SELECT * FROM `printers` WHERE `printername`='".$printer_name."'");
 	if(mysql_num_rows($fetchinfo_reg_printer) <= 0){
 		$fetchinfo_reg_printer_reg = mysql_query("INSERT INTO `buyprinter`.`printers` (`id`, `printerid`, `printername`, `added`) VALUES (NULL, '".$printer_id."', '".$printer_name."', CURRENT_TIMESTAMP);");
 	}
