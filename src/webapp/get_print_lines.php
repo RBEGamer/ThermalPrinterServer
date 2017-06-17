@@ -42,6 +42,11 @@ if(mysql_num_rows($fetchinfo_dev) > $item_list_start_treshhold && $row_dev['item
 $result = "--- ITEM LIST ---";
 }
 while($row_dev = mysql_fetch_array($fetchinfo_dev)) {
+
+	if($row_dev['item_count'] < 0 && $row_dev['item_name'] == ""){
+		$result = "\r\n";
+		continue;
+	}
 	 $result = $result .$row_dev['item_count'] ." x ".$row_dev['item_name'] ."\n";
 
    if($dont_delete==0){
