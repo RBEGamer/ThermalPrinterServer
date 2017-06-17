@@ -4,6 +4,7 @@ $verbindung = mysql_connect ($db_host,
 $db_username, $db_password)or die ("keine Verbindung möglich. Benutzername oder Passwort sind falsch");
 mysql_select_db($db_name)or die ("Die Datenbank existiert nicht.");
 
+$item_list_start_treshhold = 10;
 $dont_delete = 0;
 if(isset($_GET['noprinter'])){
 $dont_delete = 1;
@@ -37,7 +38,7 @@ $fetchinfo_dev = mysql_query("SELECT * FROM `items` WHERE `print`='1' AND `print
 }
 $result = "";
 //print only a headline if items are there
-if(mysql_num_rows($fetchinfo_dev) >0 && $row_dev['item_count'] > 0 && $row_dev['item_name'] != ""){
+if(mysql_num_rows($fetchinfo_dev) > $item_list_start_treshhold && $row_dev['item_count'] > 0 && $row_dev['item_name'] != ""){
 $result = "--- ITEM LIST ---" ."\r\n";
 }
 while($row_dev = mysql_fetch_array($fetchinfo_dev)) {
@@ -47,7 +48,7 @@ while($row_dev = mysql_fetch_array($fetchinfo_dev)) {
   $fetchinfo_push = mysql_query("UPDATE `items` SET `printed`='1' WHERE `id`='".$row_dev['id']."' AND");
   }
 }
-if(mysql_num_rows($fetchinfo_dev) >0 && $row_dev['item_count'] > 0 && $row_dev['item_name'] != ""){
+if(mysql_num_rows($fetchinfo_dev) > $item_list_start_treshhold && $row_dev['item_count'] > 0 && $row_dev['item_name'] != ""){
 $result = $result ."---------------" ."\r\n";
 }
 echo $result;
