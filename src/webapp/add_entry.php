@@ -12,12 +12,13 @@ if(isset($_POST['printer_id'])){
 $in = $_POST['item_name'];
 
 
-
+// ADD HERE SOME CHARS TO REPLACE like the german ä -> ae 
+//because the printer cant print them
 $in = str_replace('ä', 'ae', $in);
 $in = str_replace('ö', 'oe', $in);
 $in = str_replace('ü', 'ue', $in);
 $in = str_replace('ß', 'ss', $in);
-$in = str_replace('@', '(at)', $in);
+//$in = str_replace('@', '(at)', $in);
 
 if($printer_id == -1){
 //adde für alle
