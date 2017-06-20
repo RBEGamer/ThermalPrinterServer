@@ -1,9 +1,9 @@
 # Thermal Print Server
 
 # FEATURES
-* 1. collect your items on the website
-* 2.print them out
-* 3. forget nothing
+* I. collect your items on the website
+* II.print them out
+* III. forget nothing
 * multible printers are supported
 * simple configuration
 
