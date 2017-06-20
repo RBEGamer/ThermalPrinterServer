@@ -1,8 +1,17 @@
 <?php
+
+error_reporting(0);
+
+
 include('db_conf.php');
 $verbindung = mysql_connect ($db_host,
 $db_username, $db_password)or die ("keine Verbindung möglich. Benutzername oder Passwort sind falsch");
 mysql_select_db($db_name)or die ("Die Datenbank existiert nicht.");
+
+if($verbindung == false){
+exit();
+}
+
 
 $item_list_start_treshhold = 10;
 $dont_delete = 0;
