@@ -10,13 +10,9 @@ exports.handler = function (event, context) {
     try {
         console.log("event.session.application.applicationId=" + event.session.application.applicationId);
 
-        /**
-         * Uncomment this if statement and populate with your skill's application ID to
-         * prevent someone else from configuring a skill that sends requests to this function.
-         */
-
-   // if (event.session.application.applicationId !== "amzn1.ask.skill.88529c2d-15fd-4720-b727-9e66b9b5be30") {
-     //   context.fail("Invalid Application ID");
+      
+    //if (event.session.application.applicationId !== "amzn1.ask.skill.88529c2d-15fd-4720-b727-9e66b9b5be30") {
+      //  context.fail("Invalid Application ID");
     // }
 
         if (event.session.new) {
@@ -114,7 +110,7 @@ function getWelcomeResponse(callback) {
 
 
 function handlePrintItemIntent(intent, session, callback) {
-    request("http://109.230.230.209/buylist/print.php", function (error, response, body) {
+    request("http://" IP_HERE"/buylist/print.php", function (error, response, body) {
   console.log('error:', error); // Print the error if one occurred
   console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
   console.log('body:', body); // Print the HTML for the Google homepage.
@@ -126,11 +122,11 @@ function handlePrintItemIntent(intent, session, callback) {
 
 function handleAddItemIntent(intent, session, callback) {
     var item_name = intent.slots.item.value.toLowerCase()
-    request("http://109.230.230.209/buylist/alexa_skill_api.php?item_count=1&item_name=" + item_name, function (error, response, body) {
+    request("http://" IP_HERE"/buylist/alexa_skill_api.php?item_count=1&item_name=" + item_name, function (error, response, body) {
   if(body == "1"){
-      callback(session.attributes, buildSpeechletResponse("SUCCESS", item_name+ " wurde hinzugefügt", "END", true))
+      callback(session.attributes, buildSpeechletResponse("SUCCESS", item_name+ " wurde hinzugefügt", "END", false))
   }else{
-      callback(session.attributes, buildSpeechletResponse("FAILEd", "Der Artikel konnte nicht hinzugefügt werden", "END", true))
+      callback(session.attributes, buildSpeechletResponse("FAILEd", "Der Artikel konnte nicht hinzugefügt werden", "END", false))
   }
 
 });
