@@ -28,7 +28,7 @@ $fetchinfo_dev_in = mysql_query("INSERT INTO `buyprinter`.`items` (`id`, `item_n
 
 
 
-header('Location: index.php');
+echo "1";
 exit();  
 
 ?>
