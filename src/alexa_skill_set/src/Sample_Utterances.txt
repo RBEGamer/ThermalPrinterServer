@@ -1,0 +1,4 @@
+AddItemIntent Füge {item} hinzu
+PrintItemIntent Drucke liste aus
+PrintItemIntent drucke
+AMAZON.HelpIntent Sage einfach füge item  hinzu oder drucke liste aus
