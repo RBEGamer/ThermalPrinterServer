@@ -6,6 +6,7 @@
 * III. forget nothing
 * multible printers are supported
 * simple configuration
+* NOW! WITH ALEXA SKILL SET
 
 # PARTS
 * D10 ASCII thermal printer
