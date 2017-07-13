@@ -137,11 +137,7 @@ function handleAddItemIntent(intent, session, callback) {
 }
 
 function handleYesResponse(intent, session, callback) {
-    var speechOutput = "Great! Which reindeer? You can find out about Dasher, Dancer, Prancer, Vixen, Comet, Cupid, Blitzen, Rudolph, and Olive"
-    var repromptText = speechOutput
-    var shouldEndSession = false
-
-    callback(session.attributes, buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession))
+   
 }
 
 function handleNoResponse(intent, session, callback) {
