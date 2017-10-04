@@ -1,4 +1,4 @@
-# SOFTWARE SETUP
+# SOFTWARE SETUP PHP BACKEND FRONTEND
 ## INSTALL APACHE2
 * apt-get update
 * apt-get upgrade 
