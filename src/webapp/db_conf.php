@@ -1,6 +1,22 @@
 <?php
-$db_host="127.0.0.1"; // Host name 
-$db_username="root"; // Mysql username 
-$db_password="root"; // Mysql password 
-$db_name="buyprinter"; // Datacbase name 
+
+ini_set('display_errors', 'On');
+error_reporting(E_ALL);
+
+DEFINE('DB_USERNAME', 'root');
+DEFINE('DB_PASSWORD', 'root');
+DEFINE('DB_HOST', '127.0.0.1');
+DEFINE('DB_DATABASE', 'buyprinter');
+
+$mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+
+if (mysqli_connect_error()) {
+  die('Connect Error ('.mysqli_connect_errno().') '.mysqli_connect_error());
+}
+
+//echo 'Connected successfully.';
+
+
+
+
 ?>

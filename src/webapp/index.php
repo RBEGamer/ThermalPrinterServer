@@ -15,13 +15,11 @@
 </tr><tr><td> SELECT PRINTER TO ADD ITEM</td><td>
 <?php
 include('db_conf.php');
-$verbindung = mysql_connect ($db_host,
-$db_username, $db_password)or die ("keine Verbindung möglich. Benutzername oder Passwort sind falsch");
-mysql_select_db($db_name)or die ("Die Datenbank existiert nicht.");
+
 $counter=0;
-$fetchinfo_dev = mysql_query("SELECT * FROM `printers` WHERE 1");
+$fetchinfo_dev = mysqli_query($mysqli,"SELECT * FROM `printers` WHERE 1");
 $result = "<select name='printer_id' id='printer_id'><option value='-1'>ALL</option>";
-while($row_dev = mysql_fetch_array($fetchinfo_dev)) {
+while($row_dev = mysqli_fetch_array($fetchinfo_dev)) {
 	 $result = $result ."<option value='".$row_dev['printerid']. "'>".$row_dev['printername']. "</option>";
 }
  $result = $result ."</select>";
@@ -45,14 +43,12 @@ while($row_dev = mysql_fetch_array($fetchinfo_dev)) {
 <table>
 <tr><td> SELECT PRINTER TO ADD ITEM</td><td>
 <?php
-include('db_conf.php');
-$verbindung = mysql_connect ($db_host,
-$db_username, $db_password)or die ("keine Verbindung möglich. Benutzername oder Passwort sind falsch");
-mysql_select_db($db_name)or die ("Die Datenbank existiert nicht.");
+//include('db_conf.php');
+
 $counter=0;
-$fetchinfo_dev = mysql_query("SELECT * FROM `printers` WHERE 1");
+$fetchinfo_dev = mysqli_query($mysqli,"SELECT * FROM `printers` WHERE 1");
 $result = "<select name='printer_id' id='printer_id'><option value='-1'>ALL</option>";
-while($row_dev = mysql_fetch_array($fetchinfo_dev)) {
+while($row_dev = mysqli_fetch_array($fetchinfo_dev)) {
 	 $result = $result ."<option value='".$row_dev['printerid']. "'>".$row_dev['printername']. "</option>";
 }
  $result = $result ."</select>";
@@ -72,14 +68,11 @@ while($row_dev = mysql_fetch_array($fetchinfo_dev)) {
 <br><br>
 <h2>ITEM LIST</h2>
 <?php
-include('db_conf.php');
-$verbindung = mysql_connect ($db_host,
-$db_username, $db_password)or die ("keine Verbindung möglich. Benutzername oder Passwort sind falsch");
-mysql_select_db($db_name)or die ("Die Datenbank existiert nicht.");
+//include('db_conf.php');
 $counter=0;
-$fetchinfo_dev = mysql_query("SELECT * FROM `items` LEFT JOIN `printers` ON `items`.`printerid` = `printers`.`id` WHERE 1");
-$result = "<table><tr><th>ID</th><th>COUNT</th><th>ITEM</th><th>WAITING FOR PRINT</th><th>PRINT ON PRINTER</th></tr>";
-while($row_dev = mysql_fetch_array($fetchinfo_dev)) {
+$fetchinfo_dev = mysqli_query($mysqli,"SELECT * FROM `items` LEFT JOIN `printers` ON `items`.`printerid` = `printers`.`printerid` WHERE `printed` = '0'");
+$result = "<table><tr><th>COUNT</th><th>ITEM</th><th>PRINT ON PRINTER</th></tr>";
+while($row_dev = mysqli_fetch_array($fetchinfo_dev)) {
 if($row_dev['item_count'] == -1 && $row_dev['item_name'] == ""){
 $result = $result . "<tr><td></td><td></td><td></td><td></td></tr>";
 	continue;
@@ -88,9 +81,9 @@ $result = $result . "<tr><td></td><td></td><td></td><td></td></tr>";
 if($row_dev['printed'] == "1"){continue;} //print nothing if already printed
 //show print queue state
 	if($row_dev['print'] == "1"){
-	 $result = $result ."<tr><td>" .$counter ."</td><td>" .$row_dev['item_count'] ."</td><td>".$row_dev['item_name']. "</td><td>YES</td><td>".$row_dev['printername']."</td></tr>";
+	 $result = $result ."<tr><td>" .$row_dev['item_count'] ."</td><td>".$row_dev['item_name']. "</td><td>".$row_dev['printername']."</td></tr>";
 	}else {
-		$result = $result ."<tr><td>" .$counter ."</td><td>" .$row_dev['item_count'] ."</td><td>".$row_dev['item_name']. "</td><td>NO</td><td>".$row_dev['printername']."</td></tr>";
+		$result = $result ."<tr><td>" .$row_dev['item_count'] ."</td><td>".$row_dev['item_name']. "</td><td>".$row_dev['printername']."</td></tr>";
 	}
 	$counter++;
 }
@@ -99,6 +92,8 @@ if($row_dev['printed'] == "1"){continue;} //print nothing if already printed
 ?>
 
 
+<h3>EAN DATABASE EDITOR</h3>
+<a href='ean_editor.php'> EAN MISSING NAME EDITOR </a>
 </center>
 </body>
 </html>

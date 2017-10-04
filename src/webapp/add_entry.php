@@ -1,18 +1,41 @@
 <?php
+ini_set('display_errors', 'On');
+error_reporting(E_ALL);
 include('db_conf.php');
-$verbindung = mysql_connect ($db_host,
-$db_username, $db_password)or die ("keine Verbindung möglich. Benutzername oder Passwort sind falsch");
-mysql_select_db($db_name)or die ("Die Datenbank existiert nicht.");
 
 $printer_id = -1;
 if(isset($_POST['printer_id'])){
   $printer_id = $_POST['printer_id'];
 }
+if(isset($_GET['printer_id'])){
+  $printer_id = $_GET['printer_id'];
+}
+echo $printer_id;
+$in = "";
+if(isset($_POST['item_name'])){
+  $in = $_POST['item_name'];
+}
+if(isset($_GET['item_name'])){
+  $in = $_GET['item_name'];
+}
 
-$in = $_POST['item_name'];
 
 
-// ADD HERE SOME CHARS TO REPLACE like the german ä -> ae 
+$item_count = 0;
+if(isset($_POST['item_count'])){
+  $item_count = $_POST['item_count'];
+}
+if(isset($_GET['item_count'])){
+  $item_count = $_GET['item_count'];
+}
+
+
+if($in == ""){
+  echo "item_name_get_post_error";
+  exit();
+}
+
+// ADD HERE SOME CHARS TO REPLACE like the german ä -> ae
 //because the printer cant print them
 $in = str_replace('ä', 'ae', $in);
 $in = str_replace('ö', 'oe', $in);
@@ -20,24 +43,22 @@ $in = str_replace('ü', 'ue', $in);
 $in = str_replace('ß', 'ss', $in);
 //$in = str_replace('@', '(at)', $in);
 
-if($printer_id == -1){
+if($printer_id < 0){
 //adde für alle
-$fetchinfo_dev = mysql_query("SELECT * FROM `printers` WHERE 1");
-while($row_dev = mysql_fetch_array($fetchinfo_dev)) {
-$fetchinfo_dev_in = mysql_query("INSERT INTO `buyprinter`.`items` (`id`, `item_name`, `print`, `printed`, `added_date`, `item_count`, `printerid`) VALUES (NULL, '".$in."', '0', '0', CURRENT_TIMESTAMP, '".$_POST['item_count']."', '".$row_dev['printerid']."');");
+$fetchinfo_dev = mysqli_query($mysqli,"SELECT * FROM `printers` WHERE 1");
+while($row_dev = mysqli_fetch_array($fetchinfo_dev)) {
+$fetchinfo_dev_in = mysqli_query($mysqli,"INSERT INTO `buyprinter`.`items` (`id`, `item_name`, `print`, `printed`, `added_date`, `item_count`, `printerid`) VALUES (NULL, '".$in."', '0', '0', CURRENT_TIMESTAMP, '".$item_count."', '".$row_dev['printerid']."');");
 }
 
 }else{
 //adde für diesen
-if($printer_id != -1){
-$fetchinfo_dev_in = mysql_query("INSERT INTO `buyprinter`.`items` (`id`, `item_name`, `print`, `printed`, `added_date`, `item_count`, `printerid`) VALUES (NULL, '".$in."', '0', '0', CURRENT_TIMESTAMP, '".$_POST['item_count']."', '".$printer_id."');");
-}
+$fetchinfo_dev_in = mysqli_query($mysqli,"INSERT INTO `buyprinter`.`items` (`id`, `item_name`, `print`, `printed`, `added_date`, `item_count`, `printerid`) VALUES (NULL, '".$in."', '0', '0', CURRENT_TIMESTAMP, '".$item_count."', '".$printer_id."');");
 }
 
 
 
-
+echo "ok";
 header('Location: index.php');
-exit();  
+exit();
 
 ?>

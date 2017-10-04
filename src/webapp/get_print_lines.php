@@ -1,16 +1,10 @@
 <?php
 
-error_reporting(0);
 
 
 include('db_conf.php');
-$verbindung = mysql_connect ($db_host,
-$db_username, $db_password)or die ("keine Verbindung möglich. Benutzername oder Passwort sind falsch");
-mysql_select_db($db_name)or die ("Die Datenbank existiert nicht.");
 
-if($verbindung == false){
-exit();
-}
+
 
 
 $item_list_start_treshhold = 10;
@@ -26,31 +20,32 @@ $printer_id = $_GET['printer_id'];
 
 $printer_name = "";
 if(isset($_GET['printer_name'])){
-	
 $printer_name = $_GET['printer_name'];
 }
 
 //REGISTER PRINTER
 //ID -1 is reserved for all printers
 if($printer_name != "" && $printer_id != -1){
-	$fetchinfo_reg_printer = mysql_query("SELECT * FROM `printers` WHERE `printername`='".$printer_name."'");
-	if(mysql_num_rows($fetchinfo_reg_printer) <= 0){
-		$fetchinfo_reg_printer_reg = mysql_query("INSERT INTO `buyprinter`.`printers` (`id`, `printerid`, `printername`, `added`) VALUES (NULL, '".$printer_id."', '".$printer_name."', CURRENT_TIMESTAMP);");
+	$fetchinfo_reg_printer = mysqli_query($mysqli,"SELECT * FROM `printers` WHERE `printername`='".$printer_name."'");
+	if(mysqli_num_rows($fetchinfo_reg_printer) <= 0){
+		$fetchinfo_reg_printer_reg = mysqli_query($mysqli,"INSERT INTO `printers` (`id`, `printerid`, `printername`, `added`) VALUES (NULL, '".$printer_id."', '".$printer_name."', CURRENT_TIMESTAMP);");
+		echo "PRINTER REGISTERED";
+		exit();
 	}
 }
 
 
-$fetchinfo_dev = mysql_query("SELECT * FROM `items` WHERE `print`='1' AND `printed`='0'");
+$fetchinfo_dev = mysqli_query($mysqli,"SELECT * FROM `items` WHERE `print`='1' AND `printed`='0'");
 
 if($printer_id > -1){
-$fetchinfo_dev = mysql_query("SELECT * FROM `items` WHERE `print`='1' AND `printed`='0' AND `printerid`='".$printer_id."'");
+$fetchinfo_dev = mysqli_query($mysqli,"SELECT * FROM `items` WHERE `print`='1' AND `printed`='0' AND `printerid`='".$printer_id."'");
 }
 $result = "";
 //print only a headline if items are there
-if(mysql_num_rows($fetchinfo_dev) > $item_list_start_treshhold && $row_dev['item_count'] > 0 && $row_dev['item_name'] != ""){
+if(mysqli_num_rows($fetchinfo_dev) > $item_list_start_treshhold && $row_dev['item_count'] > 0 && $row_dev['item_name'] != ""){
 $result = "--- ITEM LIST ---";
 }
-while($row_dev = mysql_fetch_array($fetchinfo_dev)) {
+while($row_dev = mysqli_fetch_array($fetchinfo_dev)) {
 
 	if($row_dev['item_count'] < 0 && $row_dev['item_name'] == ""){
 		$result = "\r\n";
@@ -59,10 +54,10 @@ while($row_dev = mysql_fetch_array($fetchinfo_dev)) {
 	 $result = $result .$row_dev['item_count'] ." x ".$row_dev['item_name'] ."\n";
 
    if($dont_delete==0){
-  $fetchinfo_push = mysql_query("UPDATE `items` SET `printed`='1' WHERE `id`='".$row_dev['id']."'");
+  $fetchinfo_push = mysqli_query($mysqli,"UPDATE `items` SET `printed`='1' WHERE `id`='".$row_dev['id']."'");
   }
 }
-if(mysql_num_rows($fetchinfo_dev) > $item_list_start_treshhold && $row_dev['item_count'] > 0 && $row_dev['item_name'] != ""){
+if(mysqli_num_rows($fetchinfo_dev) > $item_list_start_treshhold && $row_dev['item_count'] > 0 && $row_dev['item_name'] != ""){
 $result = $result ."---------------" ."\r\n";
 }
 echo $result;
