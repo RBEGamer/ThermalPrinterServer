@@ -7,6 +7,7 @@
 * multible printers are supported
 * simple configuration
 * NOW! WITH ALEXA SKILL SET
+* NOW!! WITH RPI BARCODE SCANNER
 
 # PARTS
 * D10 ASCII thermal printer
