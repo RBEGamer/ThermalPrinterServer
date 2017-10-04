@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.7)
+cmake_minimum_required(VERSION 3.6)
 project(d10_linux_interface)
 set(CMAKE_CXX_STANDARD 11)
 set(SOURCE_FILES main.cpp ini_parser.cpp HTTPDownloader.cpp HTTPDownloader.hpp)
