@@ -7,7 +7,7 @@ import re
 import csv
 
 
-printer_server = "http://" + IP HERE + "/einkaufslistendrucker/"
+printer_server = "http://"+ IP HERE +"/einkaufslistendrucker/"
 
 hid = {4: 'a', 5: 'b', 6: 'c', 7: 'd', 8: 'e', 9: 'f', 10: 'g', 11: 'h', 12: 'i', 13: 'j', 14: 'k', 15: 'l', 16: 'm',
        17: 'n', 18: 'o', 19: 'p', 20: 'q', 21: 'r', 22: 's', 23: 't', 24: 'u', 25: 'v', 26: 'w', 27: 'x', 28: 'y',
@@ -45,29 +45,32 @@ def add_to_db(ean, item_text, failed):
 
 
 def do_sth_with_barcode(bcdata):
-    r = requests.get("https://api.outpan.com/v2/products/" + bcdata + "?apikey=" + TOKEN HERE)
-    if r.status_code == 200:
-        print r.text
-        #if r.headers['content-type'].find("json") != -1:
-        if re.search("json", r.headers['content-type']):
-            parsed_json = json.loads(r.text)
-            if parsed_json['name']:
-                if not parsed_json['name'] == '':
-                    print parsed_json['name']
-                    add_to_db(bcdata, parsed_json['name'], "1")
+    try:
+        r = requests.get("https://api.outpan.com/v2/products/" + bcdata + "?apikey=" + TOKEN HERE)
+        if r.status_code == 200:
+            print "db_request_code" + str(r.status_code)
+            #if r.headers['content-type'].find("json") != -1:
+            if re.search("json", r.headers['content-type']):
+                parsed_json = json.loads(r.text)
+                if parsed_json['name']:
+                    if not parsed_json['name'] == '':
+                        print parsed_json['name']
+                        add_to_db(bcdata, parsed_json['name'], "1")
+                    else:
+                        print "name empty"
+                        add_to_db(bcdata, "", "0")
                 else:
-                    print "name empty"
+                    print "item does not exists in online database"
                     add_to_db(bcdata, "", "0")
             else:
-                print "item does not exists in online database"
-                add_to_db(bcdata, "", "0")
+                #no jason response
+                print 'read_barcode_data NOT FOUND IN DATABASE: ' + bcdata
+                add_to_db(bcdata,"","0")
         else:
-            #no jason response
-            print 'read_barcode_data NOT FOUND IN DATABASE: ' + bcdata
+            #no prod found add to database simply add the ean as item name to check later
             add_to_db(bcdata,"","0")
-    else:
-        #no prod found add to database simply add the ean as item name to check later
-        add_to_db(bcdata,"","0")
+    except requests.exceptions.RequestException as e:
+        add_to_db(bcdata, "", "0")
     return
 
 
