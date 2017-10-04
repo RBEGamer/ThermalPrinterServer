@@ -1,16 +1,5 @@
-# SOFTWARE SETUP (RUN ALL AS SUDO)
-## INSTALL APACHE2
-* apt-get update
-* apt-get upgrade 
-* apt-get install mysql-server -y (PLEASE DONT USE ROOT OR SO...)
-* apt-get install apache2 -y
-* apt-get install php5 libapache2-mod-php5 php5-mysql php5-mcrypt -y
-## INSTALL PHPMYADMIN
-* apt-get install phpmyadmin -y
-* nano /etc/apache2/apache2.conf
-* paste `Include /etc/phpmyadmin/apache.conf` to the end of the file
-## REBOOT
-* reboot
+# SOFTWARE SETUP PRINTER SERVER
+
 ## INSTALL BUILD ENVIRONMENT
 * apt-get install git-all -y
 * apt-get install curl libcurl4-openssl-dev -y
