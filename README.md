@@ -1,12 +1,14 @@
 # Thermal Print Server
 
+# USAGE 
+* I collect your items on the website
+* II print them out
+* III  forget nothing
+
 # FEATURES
-* I. collect your items on the website
-* II.print them out
-* III. forget nothing
 * multible printers are supported
 * simple configuration
-* NOW! WITH ALEXA SKILL SET
+* NOW! WITH ALEXA SUPPORT
 * NOW!! WITH RPI BARCODE SCANNER
 
 # PARTS PRINTER
@@ -32,7 +34,6 @@
 * insert the sd card with raspian
 * load paper to the printer
 
-# HARDWARE SETUP BARCODE SCANNER
 
 
 
