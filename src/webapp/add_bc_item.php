@@ -49,12 +49,10 @@ if(isset($_GET['prodfound'])){
     $fetchinfo_insertb = mysqli_query($mysqli,"INSERT INTO `ean_database` (`id`, `item_name`, `item_ean`, `insert_date`,`insert_without_name`) VALUES (NULL, '".$itemname."', '".$ean."', CURRENT_TIMESTAMP,0);");
   }
   }
-  $fetchinfo_countc = mysqli_query($mysqli,"SELECT * FROM `ean_database` WHERE `item_ean`='".$ean."' AND `item_name`='".$itemname."'");
+  $fetchinfo_countc = mysqli_query($mysqli,"SELECT * FROM `ean_database` WHERE `item_ean`='".$ean."'");
   if(mysqli_num_rows($fetchinfo_countc) <= 0){
-    if($itemname != ""){
+    if($row_dev['item_name'] == "" && $itemname == ""){
   $fetchinfo_name = mysqli_query($mysqli,"UPDATE `ean_database` SET `item_name`='".$itemname."', `name_updated`='1' WHERE `item_ean`='".$ean."'");
-}else{
-  $fetchinfo_name = mysqli_query($mysqli,"UPDATE `ean_database` SET `item_name`='".$itemname."', `name_updated`='0' WHERE `item_ean`='".$ean."'");
 }
   }
 
@@ -76,19 +74,10 @@ exit();
 
 
 //ADD TO PRINT QUEUE -> ACTIVE PRINTER
-$fetchinfo_devac = mysqli_query($mysqli,"SELECT * FROM `printers` WHERE `active_printer`='1'");
-  if(mysqli_num_rows($fetchinfo_devac) <= 0){
-    //adde für alle
     $fetchinfo_dev = mysqli_query($mysqli,"SELECT * FROM `printers` WHERE 1");
     while($row_dev = mysqli_fetch_array($fetchinfo_dev)) {
     $fetchinfo_dev_in = mysqli_query($mysqli,"INSERT INTO `items` (`id`, `item_name`, `print`, `printed`, `added_date`, `item_count`, `printerid`) VALUES (NULL, '".$itemname."', '0', '0', CURRENT_TIMESTAMP, '1', '".$row_dev['printerid']."');");
     }
-  }else{
-    while($row_dev = mysqli_fetch_array($fetchinfo_devac)) {
-    $fetchinfo_dev_in_b = mysqli_query($mysqli,"INSERT INTO `items` (`id`, `item_name`, `print`, `printed`, `added_date`, `item_count`, `printerid`) VALUES (NULL, '".$itemname."', '0', '0', CURRENT_TIMESTAMP, '1', '".$row_dev['printerid']."');");
-    }
-  }
-
 
 
 
